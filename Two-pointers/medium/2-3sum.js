@@ -15,26 +15,22 @@ var threeSum = function(nums) {
 
     let target = 0;
     for (let i = 0; i < nums.length - 2; i++) {
-        // Skip duplicates for the current element
         if (i > 0 && nums[i] === nums[i - 1]) continue;
-
         let j = i + 1;
         let k = nums.length - 1;
         let partialTarget = target - nums[i];
-
         while (j < k) {
             let partialSum = nums[j] + nums[k];
-            if (partialSum === partialTarget) {
+            if (partialTarget === partialSum) {
                 solution.push([nums[i], nums[j], nums[k]]);
-                // Skip duplicates for the second and third elements
                 while (j < k && nums[j] === nums[j + 1]) j++;
                 while (j < k && nums[k] === nums[k - 1]) k--;
                 j++;
                 k--;
             } else if (partialSum > partialTarget) {
-                k--;
+                k--
             } else {
-                j++;
+                j++
             }
         }
     }
