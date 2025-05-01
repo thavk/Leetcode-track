@@ -1,12 +1,12 @@
-// Problem: Trapping Rain Water
+// Problem: Sliding Window Maximum
 
 // Category: Monotonic Stack
 
 // Difficulty: Hard
 
-// Description: Given n non-negative integers representing an elevation map where the width of each bar is 1,
-//              compute how much water it can trap after raining.
-//              Use a monotonic decreasing stack to keep track of bars that could form boundaries.
+// Description: You are given an array of integers `nums`, and a sliding window of size `k` that moves from the very left of the array to the very right. 
+//              You can only see the `k` numbers in the window. Each time the window slides right by one position.
+//              Return the maximum value in each window as an array.
 
 var maxSlidingWindow = function(nums, k) {
     const deque = [];
@@ -28,5 +28,5 @@ var maxSlidingWindow = function(nums, k) {
         }
     };
 
-    return solutionArr
+    return solutionArr;
 };
